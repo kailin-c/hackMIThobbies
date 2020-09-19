@@ -3,7 +3,8 @@ $(document).ready(function() {
         const url = "http://localhost:5000/post";
         const postInfo = {
             title: $("#title").val(),
-            description: $("#description").val()
+            description: $("#description").val(),
+            username: $("username").val()
         };
 
         $.ajax({

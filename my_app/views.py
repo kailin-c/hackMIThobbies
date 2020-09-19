@@ -6,7 +6,7 @@ import requests
 
 name = "Kailin :))"
 facts = {"Hobbies": "running, biking, handlettering", "Favourite drink": "smoothies"}
-posts = [{"title": "this is my title", "description": "this is my description"}]
+posts = [{"title": "this is my title", "description": "this is my description", "username": "this is my username"}]
 
 @app.route("/")
 def index():
@@ -16,7 +16,7 @@ def index():
 
     # post query (from the tables we made)
     db_posts = Post.query.all()
-    post_list = [{"title": post.title, "description": post.description} for post in db_posts]
+    post_list = [{"title": post.title, "description": post.description, "username": post.username} for post in db_posts]
     return render_template("index.html", name=name, facts=fact_dict, posts=post_list)
 
 @app.route("/change_name")
@@ -31,7 +31,7 @@ def change_name():
 def post():
     if request.method == "POST":
         post_info = request.get_json()
-        new_post = Post(title = post_info['title'], description=post_info['description'])
+        new_post = Post(title = post_info['title'], description=post_info['description'], username=post_info['username'])
         db.session.add(new_post)
         db.session.commit()
     return redirect("/")
