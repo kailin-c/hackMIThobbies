@@ -10,3 +10,21 @@ class Post(db.Model):
     title = db.Column(db.String(100))
     description = db.Column(db.String(100))
     username = db.Column(db.String(100))
+
+class PostRecipe(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100))
+    description = db.Column(db.String(100))
+    username = db.Column(db.String(100))
+
+class PostKnitting(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100))
+    description = db.Column(db.String(100))
+    username = db.Column(db.String(100))
+
+class PostHandletter(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100))
+    description = db.Column(db.String(100))
+    username = db.Column(db.String(100))
