@@ -19,5 +19,16 @@
 		<li></li>
 	</ul>
 </body>
-<script>setTimeout(function(){window.location.href='boardgames.html'},4000);</script>
+<script>
+	var x = Math.ceil(Math.random() * 4)
+	if (x == 1) {
+		setTimeout(function(){window.location.href='boardgames.html'},2500);
+	} else if (x == 2) {
+		setTimeout(function(){window.location.href='boardgames.html'},3000);
+	} else if (x == 3) {
+		setTimeout(function(){window.location.href='boardgames.html'},2500);
+	} else {
+		setTimeout(function(){window.location.href='boardgames.html'},3000);
+	}
+</script>
 </html>
